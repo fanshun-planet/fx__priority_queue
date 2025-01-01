@@ -1,0 +1,26 @@
+{
+  "name": "fx__priority_queue",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/fx__priority_queue.cjs.js",
+  "module": "dist/fx__priority_queue.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "keywords": [
+    "PriorityQueue",
+    "heap"
+  ],
+  "author": "fanshun",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "rollup": "^4.29.1",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.2"
+  }
+}
