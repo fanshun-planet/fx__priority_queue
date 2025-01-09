@@ -1,6 +1,6 @@
 {
   "name": "fx__priority_queue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "main": "dist/fx__priority_queue.cjs.js",
   "module": "dist/fx__priority_queue.esm.js",
