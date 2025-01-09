@@ -13,8 +13,12 @@
     "heap"
   ],
   "author": "fanshun",
-  "license": "ISC",
-  "description": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fanshun-planet/fx__priority_queue"
+  },
+  "description": "Priority Queue(JavaScript, TS)",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.2",
     "@rollup/plugin-node-resolve": "^16.0.0",
