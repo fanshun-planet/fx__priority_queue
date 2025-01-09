@@ -8,10 +8,27 @@ class PriorityQueue<T = number> {
 
   /**
    * @constructor
+   * @param compareFn - 自定义的比较函数
+   * @param elements - 可选的 元素数组（用于初始化）
    */
-  constructor(compareFn: (a: T, b: T) => boolean) {
+  constructor(compareFn: (a: T, b: T) => boolean, elements?: T[]) {
     this.queue = [];
     this.compare = compareFn;
+    this.initQueue(elements);
+  }
+
+  /**
+   * 根据构造器传入的元素数组，初始化队列
+   * @param arr
+   * @returns
+   */
+  private initQueue(arr?: T[]) {
+    if (!Array.isArray(arr)) {
+      return;
+    }
+    for (const el of arr) {
+      this.enqueue(el);
+    }
   }
 
   /**
@@ -32,7 +49,7 @@ class PriorityQueue<T = number> {
 
   /**
    * 入队，添加元素
-   * @param element
+   * @param element - 元素
    */
   enqueue(element: T) {
     this.queue.push(element);
@@ -60,8 +77,8 @@ class PriorityQueue<T = number> {
 
   /**
    * 交换元素位置
-   * @param idx1
-   * @param idx2
+   * @param idx1 - 自身索引
+   * @param idx2 - 父元素索引
    */
   swap(idx1: number, idx2: number) {
     const q = this.queue;
@@ -85,7 +102,7 @@ class PriorityQueue<T = number> {
 
   /**
    * 从顶至下（下沉），调整元素位置，维护堆性质
-   * @param idx
+   * @param idx - 元素索引
    */
   heapifyDown(idx: number) {
     const leftChildIdx: number = idx * 2 + 1;
