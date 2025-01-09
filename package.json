@@ -4,7 +4,7 @@
   "type": "module",
   "main": "dist/fx__priority_queue.cjs.js",
   "module": "dist/fx__priority_queue.esm.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "build": "rollup -c"
   },
