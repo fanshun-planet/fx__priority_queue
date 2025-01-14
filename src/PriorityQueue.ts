@@ -1,3 +1,7 @@
+interface IAdjustableParams<T> {
+  compareFn: (a: T, b: T) => boolean;
+  elements?: T[];
+}
 /**
  * 优先队列
  * @class
@@ -8,13 +12,25 @@ class PriorityQueue<T = number> {
 
   /**
    * @constructor
-   * @param compareFn - 自定义的比较函数
-   * @param elements - 可选的 元素数组（用于初始化）
+   * @param compareFnOrOptions - 自定义的比较函数 或 传入一个对象形式的参数（包含比较函数，初始数组-可选）
+   * @param elements - 可选的元素数组（用于初始化，如果第一个参数为一个对象，该参数将被忽略）
    */
-  constructor(compareFn: (a: T, b: T) => boolean, elements?: T[]) {
+  constructor(compareFnOrOptions: ((a: T, b: T) => boolean) | IAdjustableParams<T>, elements?: T[]) {
     this.queue = [];
-    this.compare = compareFn;
-    this.initQueue(elements);
+    if (typeof compareFnOrOptions === 'function') {
+      this.compare = compareFnOrOptions;
+      this.initQueue(elements);
+    }
+    else {
+      if (typeof compareFnOrOptions.compareFn !== 'function') {
+        throw new Error('"compareFn" should be a function that returns a boolean value.');
+      }
+      if (Array.isArray(compareFnOrOptions.elements)) {
+        throw new Error('"elements" should be an array.');
+      }
+      this.compare = compareFnOrOptions.compareFn;
+      this.initQueue(compareFnOrOptions.elements);
+    }
   }
 
   /**
