@@ -18,13 +18,13 @@ npm i fx__priority_queue
 import { PriorityQueue } from 'fx__priority_queue';
 
 /**
- * 方式一 直接初始化队列（传入 比较函数及需要初始化的元素数组）
+ * 示例1 直接初始化队列（传入 比较函数及需要初始化的元素数组）
  */
 const elements: number[] = [93,1,59,62,85,3,5,6,19];
 const pq = new PriorityQueue((a, b) => a > b, elements);
 
 /**
- * 方式二 仅传入自定义的比较函数
+ * 示例2 仅传入自定义的比较函数
  */
 const pq = new PriorityQueue((a, b) => a < b);
 pq.enqueue(10);
@@ -32,4 +32,21 @@ pq.enqueue(7);
 
 const el = pq.dequeue(); // 7
 const size = pq.size(); // 1
+
+/**
+ * 示例3 对于复杂数据结构，可以根据自定义权重字段（如priority）的值，从小到大的形式（最小堆）
+ */
+const pq = new PriorityQueue((a, b) => a.priority < b.priority);
+pq.enqueue({ a: '张三', priority: 3 });
+pq.enqueue({ a: '李四', priority: 2 });
+pq.enqueue({ a: '王五', priority: 1 });
+
+while (!pq.isEmpty()) {
+    const el = pq.dequeue();
+    console.log('el: ', el);
+    // 依次输出：
+    // el:  {a: '王五', priority: 1}
+    // el:  {a: '李四', priority: 2}
+    // el:  {a: '张三', priority: 3}
+}
 ```
