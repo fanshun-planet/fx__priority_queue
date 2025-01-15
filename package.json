@@ -16,7 +16,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fanshun-planet/fx__priority_queue"
+    "url": "git+https://github.com/fanshun-planet/fx__priority_queue.git"
   },
   "description": "Priority Queue(JavaScript, TS)",
   "devDependencies": {
