@@ -6,15 +6,15 @@
 [![npm version](https://badge.fury.io/js/priority-queue-data-structure-lib.svg)](https://github.com/fanshun-planet/fx__priority_queue)
 [![Documentation](https://docs.rs/priority-queue-data-structure-lib/badge.svg)](https://github.com/fanshun-planet/fx__priority_queue)
 
-### 安装
+### Install 安装
 
-要使用 `fx__priority_queue`，可以通过 npm 来安装（或其他包管理工具，如 pnpm 等）：
+You can download and install through package management tools such as "npm", "yarn", "pnpm", etc
 
 ```bash
 npm i fx__priority_queue
 ```
 
-### 使用示例
+### Example 使用示例
 
 ```TypeScript
 import { PriorityQueue } from 'fx__priority_queue';
