@@ -96,7 +96,7 @@ class PriorityQueue<T = number> {
    * @param idx1 - 自身索引
    * @param idx2 - 父元素索引
    */
-  swap(idx1: number, idx2: number) {
+  private swap(idx1: number, idx2: number) {
     const q = this.queue;
     const x = this.queue[idx1];
     q[idx1] = q[idx2];
@@ -107,7 +107,7 @@ class PriorityQueue<T = number> {
    * 上浮特定的元素（从底至顶调整元素位置）
    * @param idx
    */
-  heapifyUp(idx: number) {
+  private heapifyUp(idx: number) {
     let parentIdx: number = Math.floor((idx - 1) / 2);
     while (idx > 0 && this.compare(this.queue[idx], this.queue[parentIdx])) {
       this.swap(idx, parentIdx);
@@ -120,7 +120,7 @@ class PriorityQueue<T = number> {
    * 从顶至下（下沉），调整元素位置，维护堆性质
    * @param idx - 元素索引
    */
-  heapifyDown(idx: number) {
+  private heapifyDown(idx: number) {
     const leftChildIdx: number = idx * 2 + 1;
     const rightChildIdx: number = idx * 2 + 2;
     const q = this.queue;
