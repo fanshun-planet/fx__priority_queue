@@ -25,7 +25,7 @@ class PriorityQueue<T = number> {
       if (typeof compareFnOrOptions.compareFn !== 'function') {
         throw new Error('"compareFn" should be a function that returns a boolean value.');
       }
-      if (Array.isArray(compareFnOrOptions.elements)) {
+      if (!Array.isArray(compareFnOrOptions.elements)) {
         throw new Error('"elements" should be an array.');
       }
       this.compare = compareFnOrOptions.compareFn;
