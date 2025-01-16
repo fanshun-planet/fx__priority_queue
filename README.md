@@ -26,6 +26,14 @@ import { PriorityQueue } from 'fx__priority_queue';
  */
 const elements: number[] = [93,1,59,62,85,3,5,6,19];
 const pq = new PriorityQueue((a, b) => a > b, elements);
+/**
+ * Or use parameters in the form of objects.
+ * 或者使用对象形式的参数进行初始化
+ */
+// const pq = new PriorityQueue({
+//     compareFn: (a, b) => a > b,
+//     elements: [93,1,59,62,85,3,5,6,19],
+// });
 
 /**
  * Example 2: Only pass in custom comparison function.
